@@ -1,0 +1,1 @@
+add_executable(point hash_point.cpp)

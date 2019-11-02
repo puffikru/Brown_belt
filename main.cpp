@@ -1,19 +1,15 @@
-#include <iostream>
-#include <vector>
+#include "generator.h"
+#include "profile.h"
+#include <set>
+#include <unordered_set>
 
 using namespace std;
 
 int main() {
-  vector<int> cash(5001);
-  int nominal;
-  while (cin >> nominal) {
-    cash[nominal]++;
-  }
+  PlateGenerator pg;
+  set<Plate> s_plates;
+  const int N = 10;
 
-  for (int i = 0; i < cash.size(); ++i) {
-    if (cash[i] != 0) {
-      cout << i << " - " << cash[i] << endl;
-    }
-  }
+
   return 0;
 }
