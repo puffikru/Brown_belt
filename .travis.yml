@@ -1,20 +1,18 @@
+sudo: false
 dist: xenial
 language: cpp
 compiler: clang
-#addons:
-#  apt:
-#    packages:
-#      - libboost-test-dev
-#      - libspdlog-dev
+install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-9" CC="gcc-9"; fi
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-9
+      - g++-9
 script:
-  - cmake .
-  - cmake --build .
-#  - cmake --build . --target test
-  - cmake --build . --target package
-deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-#    - curl -f -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -upuffikru:$BINTRAY_API_KEY "https://api.bintray.com/content/puffikru/homework/homework/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
-
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make
 
