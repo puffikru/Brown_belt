@@ -15,4 +15,4 @@ script:
   - mkdir build
   - cd build
   - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make hash
-
+  - curl -f -T hash-Linux.deb -upuffikru:$BINTRAY_API_KEY "https://api.bintray.com/content/puffikru/Brown_belt/hash-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
