@@ -13,6 +13,12 @@ add_subdirectory(hash_set)
 add_subdirectory(point)
 add_subdirectory(set_iterator)
 
+set_target_properties(${hash} PROPERTIES
+        CXX_STANDARD 17
+        CXX_STANDARD_REQUIRED ON
+        COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
+        )
+
 install(TARGETS ${hash} RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
