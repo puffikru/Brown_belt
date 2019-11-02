@@ -13,3 +13,16 @@ add_subdirectory(hash_set)
 add_subdirectory(point)
 add_subdirectory(set_iterator)
 
+install(TARGETS ${hash} RUNTIME DESTINATION bin)
+
+set(CPACK_GENERATOR DEB)
+
+set(CPACK_PACKAGE_VERSION_MAJOR "0")
+set(CPACK_PACKAGE_VERSION_MINOR "0")
+set(CPACK_PACKAGE_VERSION_PATCH "1")
+
+set(CPACK_PACKAGE_CONTACT igorbulakh1987@yandex.ru)
+
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+
+include(CPack)

@@ -1,15 +1,1 @@
 add_executable(hash hash_set.cpp)
-
-install(TARGETS hash RUNTIME DESTINATION bin)
-
-set(CPACK_GENERATOR DEB)
-
-set(CPACK_PACKAGE_VERSION_MAJOR "0")
-set(CPACK_PACKAGE_VERSION_MINOR "0")
-set(CPACK_PACKAGE_VERSION_PATCH "1")
-
-set(CPACK_PACKAGE_CONTACT igorbulakh1987@yandex.ru)
-
-set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-
-include(CPack)
