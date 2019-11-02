@@ -13,5 +13,3 @@ add_subdirectory(hash_set)
 add_subdirectory(point)
 add_subdirectory(set_iterator)
 
-
-
