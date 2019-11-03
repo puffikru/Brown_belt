@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.8)
 
 if ($ENV{TRAVIS_BUILD_NUMBER})
-    project(Brown VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+    project(hash VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 else ($ENV{TRAVIS_BUILD_NUMBER})
-    project(Brown VERSION 0.0.1)
+    project(hash VERSION 0.0.1)
 endif ($ENV{TRAVIS_BUILD_NUMBER})
 
 set(CMAKE_CXX_STANDARD 17)
