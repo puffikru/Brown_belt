@@ -9,6 +9,8 @@ endif ($ENV{TRAVIS_BUILD_NUMBER})
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
+configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
+
 add_subdirectory(hash_set)
 add_subdirectory(point)
 add_subdirectory(set_iterator)
