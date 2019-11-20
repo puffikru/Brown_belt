@@ -1,4 +1,5 @@
 #include "test_runner.h"
+//#include "gtest/gtest.h"
 
 #include <forward_list>
 #include <iterator>
@@ -164,6 +165,18 @@ void TestAdd() {
   ASSERT_EQUAL(hash_set.Has(3), false);
 }
 
+void run() {
+//  TestRunner tr;
+////  RUN_TEST(tr, TestAdd);
+//  RUN_TEST(tr, TestSmoke);
+//  RUN_TEST(tr, TestEmpty);
+//  RUN_TEST(tr, TestIdempotency);
+//  RUN_TEST(tr, TestEquivalence);
+
+  cout << "hash_set is running." << endl;
+}
+
+
 int main() {
   TestRunner tr;
 //  RUN_TEST(tr, TestAdd);
@@ -171,6 +184,9 @@ int main() {
   RUN_TEST(tr, TestEmpty);
   RUN_TEST(tr, TestIdempotency);
   RUN_TEST(tr, TestEquivalence);
+
+  run();
+
   return 0;
 }
 
