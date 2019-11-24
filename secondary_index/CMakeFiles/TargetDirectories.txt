@@ -1,0 +1,3 @@
+/Users/bulahigor/Desktop/Brown_belt/secondary_index/CMakeFiles/rebuild_cache.dir
+/Users/bulahigor/Desktop/Brown_belt/secondary_index/CMakeFiles/edit_cache.dir
+/Users/bulahigor/Desktop/Brown_belt/secondary_index/CMakeFiles/Brown.dir
