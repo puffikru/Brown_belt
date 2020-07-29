@@ -1,0 +1,8 @@
+[
+  {"amount": 2500, "category": "food"},
+  {"amount": 1150, "category": "transport"},
+  {"amount": 5780, "category": "restaurants"},
+  {"amount": 7500, "category": "clothes"},
+  {"amount": 23740, "category": "travel"},
+  {"amount": 12000, "category": "sport"}
+]

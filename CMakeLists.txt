@@ -1,17 +1,19 @@
 cmake_minimum_required(VERSION 3.15)
 
-if ($ENV{TRAVIS_BUILD_NUMBER})
-    project(Brown VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
-else ($ENV{TRAVIS_BUILD_NUMBER})
-    project(Brown VERSION 0.0.1)
-endif ($ENV{TRAVIS_BUILD_NUMBER})
+project(Brown)
+
+#if ($ENV{TRAVIS_BUILD_NUMBER})
+#    project(Brown VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+#else ($ENV{TRAVIS_BUILD_NUMBER})
+#    project(Brown VERSION 0.0.1)
+#endif ($ENV{TRAVIS_BUILD_NUMBER})
 
 #find_package(Gtest COMPONENTS gtest gmock gtest_main REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
-add_executable(Brown secondary_index/secondary_index.cpp)
+add_executable(Brown json_uploader/spendings_json.cpp json_uploader/json.cpp)
 
 #set(SOURSE_FILES main.cpp courses_tests/basic_tests/basic_check.cpp)
 

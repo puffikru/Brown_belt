@@ -94,6 +94,30 @@ make helloworld
 
 
 
+###Генерация ssh ключей
+
+```{bash}
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+> Generating public/private rsa key pair.
+
+> Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+
+eval "$(ssh-agent -s)"
+> Agent pid 59566
+
+vim ~/.ssh/config
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+
+ssh-add -K ~/.ssh/id_rsa
+
+pbcopy < ~/.ssh/id_rsa.pub
+```
 
 
 
