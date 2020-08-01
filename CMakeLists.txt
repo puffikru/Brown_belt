@@ -13,7 +13,7 @@ project(Brown)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
-add_executable(Brown ini_library/ini.cpp ini_library/test_ini.cpp)
+add_executable(Brown restructuring/main.cpp restructuring/stats_aggregator.cpp restructuring/stats_aggregator_test.cpp)
 
 #set(SOURSE_FILES main.cpp courses_tests/basic_tests/basic_check.cpp)
 
