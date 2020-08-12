@@ -13,7 +13,7 @@ project(Brown)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
-add_executable(Brown synchronized/synchronized_2.cpp)
+add_executable(Brown concurrent_map/concurrent_map_2.cpp)
 
 #set(SOURSE_FILES main.cpp courses_tests/basic_tests/basic_check.cpp)
 
