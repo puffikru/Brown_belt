@@ -115,7 +115,7 @@ public:
 
     //Реализовать неконстантную версию operator[]
     IndexProxy operator[](size_t degree) {
-        return {*this, degree};
+        return IndexProxy{*this, degree};
     }
 
     T operator()(const T &x) const {
