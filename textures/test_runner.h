@@ -5,7 +5,6 @@
 #include <stdexcept>
 #include <iostream>
 #include <map>
-#include <unordered_map>
 #include <set>
 #include <string>
 #include <vector>
@@ -54,30 +53,13 @@ ostream& operator << (ostream& os, const map<K, V>& m) {
 	return os << "}";
 }
 
-template <class K, class V>
-ostream& operator << (ostream& os, const unordered_map<K, V>& m) {
-	os << "{";
-	bool first = true;
-	for (const auto& kv : m) {
-		if (!first) {
-			os << ", ";
-		}
-		first = false;
-		os << kv.first << ": " << kv.second;
-	}
-	return os << "}";
-}
-
 template<class T, class U>
 void AssertEqual(const T& t, const U& u, const string& hint = {}) {
-	Color::Modifier red(Color::FG_RED);
-	Color::Modifier yel(Color::FG_YELLOW);
-	Color::Modifier def(Color::FG_DEFAULT);
 	if (!(t == u)) {
 		ostringstream os;
-		os << red << "Assertion failed: " << t << " != " << u << def;
+		os << "Assertion failed: " << t << " != " << u;
 		if (!hint.empty()) {
-			os << yel << " hint: " << hint << def;
+			os << " hint: " << hint;
 		}
 		throw runtime_error(os.str());
 	}
@@ -91,15 +73,12 @@ class TestRunner {
 public:
 	template <class TestFunc>
 	void RunTest(TestFunc func, const string& test_name) {
-		Color::Modifier red(Color::FG_RED);
-		Color::Modifier green(Color::FG_GREEN);
-		Color::Modifier def(Color::FG_DEFAULT);
 		try {
 			func();
-			cerr << green << test_name << " OK" << def << endl;
+			cerr << test_name << " OK" << endl;
 		} catch (exception& e) {
 			++fail_count;
-			cerr << red << test_name << " fail: " << e.what() << def << endl;
+			cerr << test_name << " fail: " << e.what() << endl;
 		} catch (...) {
 			++fail_count;
 			cerr << "Unknown exception caught" << endl;
@@ -108,9 +87,7 @@ public:
 	
 	~TestRunner() {
 		if (fail_count > 0) {
-			Color::Modifier red(Color::FG_RED);
-			Color::Modifier def(Color::FG_DEFAULT);
-			cerr << red << fail_count << " unit tests failed. Terminate" << def << endl;
+			cerr << fail_count << " unit tests failed. Terminate" << endl;
 			exit(1);
 		}
 	}
@@ -137,17 +114,3 @@ Assert(x, os.str());                  \
 tr.RunTest(func, #func)
 
 
-void Print(const string& s) {
-    cout << s;
-}
-
-void Print(const map<char, int>& s) {
-    cout << s;
-}
-
-
-#define PRINT(x) { \
-ostringstream os; \
-os << #x << ": " << x << "\n"; \
-Print(os.str()); \
-} \

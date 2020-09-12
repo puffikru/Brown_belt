@@ -13,7 +13,8 @@ project(Brown)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
-add_executable(Brown expression/main.cpp)
+add_executable(Brown textures/main.cpp textures/Solution.cpp textures/Textures.cpp)
+#add_executable(Brown pipeline/pipeline.cpp)
 
 #set(SOURSE_FILES main.cpp courses_tests/basic_tests/basic_check.cpp)
 
