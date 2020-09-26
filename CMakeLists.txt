@@ -13,7 +13,8 @@ project(Brown)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
-add_executable(Brown unique_ptr/unique_ptr.cpp)
+add_executable(Brown booking/test.cpp booking/new_booking_providers.h booking/new_trip_manager.h
+        booking/old_booking_providers.h booking/old_trip_manager.h booking/booking.h)
 #add_executable(Brown pipeline/pipeline.cpp)
 
 #set(SOURSE_FILES main.cpp courses_tests/basic_tests/basic_check.cpp)
