@@ -13,7 +13,7 @@ project(Brown)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
-add_executable(Brown demographic_stats_tests/tests.cpp)
+add_executable(Brown domains/solution.cpp)
 #add_executable(Brown pipeline/pipeline.cpp)
 
 #set(SOURSE_FILES main.cpp courses_tests/basic_tests/basic_check.cpp)
