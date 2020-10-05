@@ -11,9 +11,20 @@ project(Brown)
 #find_package(Gtest COMPONENTS gtest gmock gtest_main REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_MODULE_PATH              "${CMAKE_SOURCE_DIR}/cmake")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
+set(CMAKE_EXPORT_COMPILE_COMMANDS  ON)
 
-add_executable(Brown domains/solution.cpp)
+#find_package(Catch REQUIRED)
+
+#add_library(contrib_catch_main
+#        contrib/catch/catch_main.cpp)
+#
+#target_include_directories(contrib_catch_main
+#        PUBLIC contrib/catch)
+
+add_executable(Brown domains_tests/test_domains.cpp)
 #add_executable(Brown pipeline/pipeline.cpp)
 
 #set(SOURSE_FILES main.cpp courses_tests/basic_tests/basic_check.cpp)
@@ -22,6 +33,7 @@ add_executable(Brown domains/solution.cpp)
 #add_subdirectory(point)
 #add_subdirectory(set_iterator)
 #add_subdirectory(courses_tests)
+#add_subdirectory(domains_tests)
 
 #set(CPACK_GENERATOR DEB)
 #
