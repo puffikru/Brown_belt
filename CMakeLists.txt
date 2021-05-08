@@ -24,7 +24,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS  ON)
 #target_include_directories(contrib_catch_main
 #        PUBLIC contrib/catch)
 
-add_executable(Brown variant/main.cpp)
+add_executable(Brown budget/main.cpp)
 #add_executable(Brown pipeline/pipeline.cpp)
 
 #set(SOURSE_FILES main.cpp courses_tests/basic_tests/basic_check.cpp)
